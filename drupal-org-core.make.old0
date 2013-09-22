@@ -1,14 +1,9 @@
 api = 2
 core = 7.x
 
-; Use Pressflow instead of Drupal core:
-projects[pressflow][type] = "core"
-projects[pressflow][download][type] = "git"
-projects[pressflow][download][url] = "git://github.com/pressflow/7.git"
-api = 2
-core = 7.x
-
 ; Download Drupal core and apply core patches if needed.
+projects[drupal][type] = "core"
+projects[drupal][version] = "7.23"
 
 ; Hide the profiles under /profiles, so Commons is the only one. This allows
 ; the installation to start at the Language selection screen, bypassing a
