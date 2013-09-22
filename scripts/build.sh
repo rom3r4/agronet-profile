@@ -142,7 +142,8 @@ if [[ -d $BUILD_PATH ]]; then
       tar -zxvf modules.tar.gz
       tar -zxvf themes.tar.gz
     else
-      git clone --branch 7.x-3.x-merged ${USERNAME}@git.drupal.org:project/commons.git commons_profile
+      # git clone --branch 7.x-3.x-merged ${USERNAME}@git.drupal.org:project/commons.git commons_profile
+      git clone --branch 7.x-3.x-merged git@github.com:julianromerajuarez/drupal-voa3rprofile.git
       build_distro $BUILD_PATH
     fi
 else

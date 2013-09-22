@@ -8,9 +8,11 @@ merge_repos() {
   cd $BUILD_PATH/commons_profile
   for i in "${modules[@]}"; do
     if [[ -n $USERNAME ]]; then
-      git remote add ${i} ${USERNAME}@git.drupal.org:project/${i}.git
+      # git remote add ${i} ${USERNAME}@git.drupal.org:project/${i}.git
+      git remote add ${i} git@github.com:julianromerajuarez/drupal-voa3rprofile.git
     else
-      git remote add ${i} http://git.drupal.org/project/${i}.git
+      git remote add ${i} https://github.com/julianromerajuarez/drupal-voa3rprofile.git
+      #git remote add ${i} http://git.drupal.org/project/${i}.git
     fi
     git fetch ${i}
     git merge -s ours --no-commit ${i}/7.x-3.x
@@ -106,7 +108,8 @@ build_distro() {
           tar -zxvf /tmp/commons.tar.gz
           chmod -R 775 $BUILD_PATH/publish/profiles/commons
         else
-          git clone --branch 7.x-3.x-merged ${USERNAME}@git.drupal.org:project/commons.git commons_profile
+          # git clone --branch 7.x-3.x-merged ${USERNAME}@git.drupal.org:project/commons.git commons_profile
+          git clone --branch 7.x-3.x-merged git@github.com:julianromerajuarez/drupal-voa3rprofile.git
           build_distro $BUILD_PATH
         fi
     else
