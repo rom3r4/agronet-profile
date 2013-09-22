@@ -24,9 +24,11 @@ merge_repos() {
   #do the theme now
   i=commons_origins
   if [[ -n $USERNAME ]]; then
-    git remote add ${i} ${USERNAME}@git.drupal.org:project/${i}.git
+    #git remote add ${i} ${USERNAME}@git.drupal.org:project/${i}.git
+      git remote add ${i} git@github.com:julianromerajuarez/drupal-voa3rprofile.git
   else
-    git remote add ${i} http://git.drupal.org/project/${i}.git
+      git remote add ${i} git@github.com:julianromerajuarez/drupal-voa3rprofile.git
+    #git remote add ${i} http://git.drupal.org/project/${i}.git
   fi
   git fetch ${i}
   git merge -s ours --no-commit ${i}/7.x-3.x
