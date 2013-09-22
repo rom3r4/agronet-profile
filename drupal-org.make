@@ -1,3 +1,6 @@
+api = 2
+core = 7.x
+
 ; Add internationalization support.
 ; Add preliminary Views integration
 ; Add support for the undefined language.
